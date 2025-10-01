@@ -3,28 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Wellness Journal</title>
+  <title>The Wellness Journal ✨</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth slide-down animation for mobile menu */
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+    #mobile-menu.open {
+      max-height: 500px; /* Adjust if you have more items */
+    }
+  </style>
 </head>
 <body class="min-h-screen bg-white text-gray-900 font-serif">
 
   <!-- Header -->
   <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
     <div class="container mx-auto flex items-center justify-between py-5 px-6 md:px-12">
-      <h1 class="text-2xl font-bold tracking-wide select-none">The Wellness Journal</h1>
+      <h1 class="text-2xl font-bold tracking-wide select-none">thewellnessjournal.me</h1>
+
+      <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-8 text-gray-700 text-sm font-medium">
         <a href="#home" class="hover:text-gray-900 transition-colors">Home</a>
         <a href="#articles" class="hover:text-gray-900 transition-colors">Articles</a>
         <a href="#about" class="hover:text-gray-900 transition-colors">About</a>
         <a href="#contact" class="hover:text-gray-900 transition-colors">Contact</a>
       </nav>
-      <button class="md:hidden text-gray-700 focus:outline-none" aria-label="Open menu">
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none" aria-label="Open menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200">
+      <nav class="flex flex-col space-y-4 p-6 text-gray-700 text-sm font-medium">
+        <a href="#home" class="hover:text-gray-900 transition-colors">Home</a>
+        <a href="#articles" class="hover:text-gray-900 transition-colors">Articles</a>
+        <a href="#about" class="hover:text-gray-900 transition-colors">About</a>
+        <a href="#contact" class="hover:text-gray-900 transition-colors">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -118,8 +143,3 @@
 
   <!-- Footer -->
   <footer class="border-t border-gray-200 py-8 text-center text-gray-500 text-sm select-none">
-    &copy; 2024 thewellnessjournal.me — All rights reserved.
-  </footer>
-
-</body>
-</html>
