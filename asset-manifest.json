@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/thewellnessjournal/static/css/main.18ba8f6e.css",
+    "main.js": "/thewellnessjournal/static/js/main.eba6b0f8.js",
+    "index.html": "/thewellnessjournal/index.html",
+    "main.18ba8f6e.css.map": "/thewellnessjournal/static/css/main.18ba8f6e.css.map",
+    "main.eba6b0f8.js.map": "/thewellnessjournal/static/js/main.eba6b0f8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18ba8f6e.css",
+    "static/js/main.eba6b0f8.js"
+  ]
+}
