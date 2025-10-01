@@ -14,7 +14,7 @@ This project is built with **GitHub Pages** and will grow into a living blog ful
 ---
 
 ## 🚀 Live Site  
-🔗 [Visit The Wellness Journal](https://your-username.github.io/thewellnessjournal)  
+🔗 [Visit The Wellness Journal](https://ann-creates.github.io/thewellnessjournal/)  
 
 ---
 
