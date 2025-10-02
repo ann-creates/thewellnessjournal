@@ -81,6 +81,10 @@ export const WellnessJournal = () => {
     setMenuOpen(false);
   };
 
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   const menuLinks = [
     { label: "Home", href: "#home" },
     { label: "Food", href: "/food" },
@@ -113,32 +117,34 @@ export const WellnessJournal = () => {
               </a>
             ))}
           </nav>
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center group"
-            aria-label="Toggle menu"
+          
+          {/* New Hamburger Button */}
+          <button 
+            id="hamburger-button" 
+            className="md:hidden relative w-10 h-10 flex justify-center items-center bg-black rounded-full z-[101]" 
+            aria-label="Toggle menu" 
             aria-expanded={menuOpen}
+            onClick={handleMenuToggle}
           >
-            <span
-              className={`block absolute h-0.5 w-6 bg-gray-700 rounded transform transition duration-300 ease-in-out ${
-                menuOpen ? "rotate-45 top-3" : "-translate-y-2 top-2"
-              }`}
-            />
-            <span
-              className={`block absolute h-0.5 w-6 bg-gray-700 rounded transition-all duration-300 ease-in-out ${
-                menuOpen ? "opacity-0" : "top-4"
-              }`}
-            />
-            <span
-              className={`block absolute h-0.5 w-6 bg-gray-700 rounded transform transition duration-300 ease-in-out ${
-                menuOpen ? "-rotate-45 top-3" : "translate-y-2 top-6"
-              }`}
-            />
+            <span 
+              id="line-top" 
+              className={`absolute block h-0.5 w-7 bg-white rounded-sm transition-all duration-300 ease-in-out ${menuOpen ? 'rotate-45' : '-translate-y-2'}`}
+            ></span>
+            <span 
+              id="line-middle" 
+              className={`absolute block h-0.5 w-7 bg-white rounded-sm transition-opacity duration-300 ease-in-out ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
+            ></span>
+            <span 
+              id="line-bottom" 
+              className={`absolute block h-0.5 w-7 bg-white rounded-sm transition-all duration-300 ease-in-out ${menuOpen ? '-rotate-45' : 'translate-y-2'}`}
+            ></span>
           </button>
         </div>
-        {menuOpen && (
-          <nav className="md:hidden bg-white border-t border-gray-200 px-6 py-6">
-            <form onSubmit={handleSearchSubmit} className="mb-6">
+
+        {/* New Mobile Menu Structure */}
+        <div id="menu-revealer" className={menuOpen ? 'is-open' : ''}></div>
+        <nav id="mobile-menu" className={`md:hidden px-6 pt-24 pb-8 ${menuOpen ? 'menu-open' : ''}`}>
+            <form onSubmit={handleSearchSubmit} className="mb-6 max-w-sm mx-auto">
               <label htmlFor="mobile-search" className="sr-only">
                 Search
               </label>
@@ -148,16 +154,16 @@ export const WellnessJournal = () => {
                 placeholder="What are you looking for?"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="w-full border border-gray-600 rounded-full px-5 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400 bg-black text-white placeholder-gray-400"
                 autoComplete="off"
               />
             </form>
-            <ul className="flex flex-col space-y-4 text-gray-700 text-base font-medium">
+            <ul className="flex flex-col items-center space-y-4 text-white text-lg font-medium">
               {menuLinks.map(({ label, href }) => (
                 <li key={label}>
                   <a
                     href={href}
-                    className="block hover:text-gray-900 transition-colors"
+                    className="mobile-menu-link block hover:text-gray-300 transition-colors"
                     onClick={() => setMenuOpen(false)}
                   >
                     {label}
@@ -165,9 +171,10 @@ export const WellnessJournal = () => {
                 </li>
               ))}
             </ul>
-          </nav>
-        )}
+        </nav>
       </header>
+
+      {/* Main content remains unchanged */}
       <main className="container mx-auto px-6 md:px-12 py-12 max-w-5xl">
         <section id="home" className="mb-20">
           <article className="grid md:grid-cols-2 gap-12 items-center">

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -14,3 +15,95 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* --- New Hamburger Menu Animation Styles --- */
+
+.article-card {
+    transition-property: opacity, transform;
+    transition-duration: 1000ms;
+    transition-timing-function: ease-out;
+}
+
+#menu-revealer {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 99;
+    opacity: 0;
+    
+    transition-property: width, height, top, right, border-radius, opacity;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.3s, 0.15s;
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1),
+                                cubic-bezier(0.77, 0, 0.175, 1),
+                                cubic-bezier(0.77, 0, 0.175, 1),
+                                cubic-bezier(0.77, 0, 0.175, 1),
+                                cubic-bezier(0.77, 0, 0.175, 1),
+                                ease;
+    transition-delay: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.35s;
+}
+
+#menu-revealer.is-open {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 55vh;
+    border-radius: 0 0 30px 30px;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+#mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55vh;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    overflow-y: auto;
+    transition: opacity 0.2s ease-in-out 0s;
+}
+
+#mobile-menu.menu-open {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0.15s;
+}
+
+#mobile-menu ul > li {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+#mobile-menu ul > li:nth-child(1) { transition-delay: 0.16s; }
+#mobile-menu ul > li:nth-child(2) { transition-delay: 0.12s; }
+#mobile-menu ul > li:nth-child(3) { transition-delay: 0.08s; }
+#mobile-menu ul > li:nth-child(4) { transition-delay: 0.04s; }
+#mobile-menu ul > li:nth-child(5) { transition-delay: 0s; }
+#mobile-menu ul > li:nth-child(6) { transition-delay: 0s; }
+#mobile-menu ul > li:nth-child(7) { transition-delay: 0s; }
+#mobile-menu ul > li:nth-child(8) { transition-delay: 0s; }
+#mobile-menu ul > li:nth-child(9) { transition-delay: 0s; }
+#mobile-menu ul > li:nth-child(10) { transition-delay: 0s; }
+
+#mobile-menu.menu-open ul > li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#mobile-menu.menu-open ul > li:nth-child(1) { transition-delay: 0.2s; }
+#mobile-menu.menu-open ul > li:nth-child(2) { transition-delay: 0.24s; }
+#mobile-menu.menu-open ul > li:nth-child(3) { transition-delay: 0.28s; }
+#mobile-menu.menu-open ul > li:nth-child(4) { transition-delay: 0.32s; }
+#mobile-menu.menu-open ul > li:nth-child(5) { transition-delay: 0.36s; }
+#mobile-menu.menu-open ul > li:nth-child(6) { transition-delay: 0.40s; }
+#mobile-menu.menu-open ul > li:nth-child(7) { transition-delay: 0.44s; }
+#mobile-menu.menu-open ul > li:nth-child(8) { transition-delay: 0.48s; }
+#mobile-menu.menu-open ul > li:nth-child(9) { transition-delay: 0.52s; }
+#mobile-menu.menu-open ul > li:nth-child(10) { transition-delay: 0.56s; }
