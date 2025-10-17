@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/thewellnessjournal/static/css/main.4c914f29.css",
-    "main.js": "/thewellnessjournal/static/js/main.d2079c0d.js",
-    "index.html": "/thewellnessjournal/index.html",
-    "main.4c914f29.css.map": "/thewellnessjournal/static/css/main.4c914f29.css.map",
-    "main.d2079c0d.js.map": "/thewellnessjournal/static/js/main.d2079c0d.js.map"
+    "main.css": "/static/css/main.4c914f29.css",
+    "main.js": "/static/js/main.d2079c0d.js",
+    "index.html": "/index.html",
+    "main.4c914f29.css.map": "/static/css/main.4c914f29.css.map",
+    "main.d2079c0d.js.map": "/static/js/main.d2079c0d.js.map"
   },
   "entrypoints": [
     "static/css/main.4c914f29.css",
